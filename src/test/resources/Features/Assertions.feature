@@ -33,4 +33,5 @@ Feature: Assertions
     And path '/tools'
     When method get
     Then status 200
-    And match each response[*].category contains ["plumbing","power-tools","ladders","electric-generators","power-tools","power-tools","power-tools","power-tools","ladders","ladders","ladders","trailers","plumbing","plumbing","plumbing","trailers","trailers","electric-generators","electric-generators","electric-generators"]
+#    And match each response[*].category contains ["plumbing","power-tools","ladders","electric-generators","power-tools","power-tools","power-tools","power-tools","ladders","ladders","ladders","trailers","plumbing","plumbing","plumbing","trailers","trailers","electric-generators","electric-generators","electric-generators"]
+    And match response[*].category contains ["plumbing","power-tools","ladders","electric-generators","power-tools","power-tools","power-tools","power-tools","ladders","ladders","ladders","trailers","plumbing","plumbing","plumbing","trailers","trailers","electric-generators","electric-generators","electric-generators"]
