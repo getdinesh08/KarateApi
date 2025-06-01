@@ -4,6 +4,6 @@ public class TestRunner {
 
     @Karate.Test
     Karate test() {
-        return Karate.run("classpath:Features").tags("@ResponseVariable"); // relative path from src/test/java
+        return Karate.run("classpath:Features").tags("@Assert"); // relative path from src/test/java
     }
 }
