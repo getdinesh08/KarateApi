@@ -1,15 +1,9 @@
 Feature: Verifying the Scenario Outline functionality
-
   @scenarioOutline @only
   Scenario Outline: To verify how scenario outline works
-
     Given url '<url>'
     When method get
     Then status 200
-
-
-
-
     Examples:
       | url                                                                                                                   |
       | https://restful-booker.herokuapp.com/booking                                                                          |
