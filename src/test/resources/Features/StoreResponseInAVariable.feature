@@ -1,3 +1,4 @@
+@only
 Feature: TO store the response of a feature in a variable
 
 
@@ -17,15 +18,19 @@ Feature: TO store the response of a feature in a variable
   #    384073696588b0dbe34dd9019493bb6259bf89f2b10af8c8be47ffbd0eec238c -- access token
 
   @CreatePostRequest
-  Scenario: To create a new order to test post functionality
+  Scenario Outline: To create a new order to test post functionality
     Given url 'https://simple-tool-rental-api.glitch.me'
     And path '/orders'
     And header Authorization = '384073696588b0dbe34dd9019493bb6259bf89f2b10af8c8be47ffbd0eec238c'
-    And request { "toolId": 4643,"customerName": "Suvarna", "comment":  "Trying API" }
+    And request { "toolId": 4643,"customerName": "<customerName>", "comment":  "Trying API" }
     Then method post
     And status 201
     Then def toolNew = response.toolId
     And print toolNew
+  Examples:
+    |customerName|
+    |Suvarna     |
+    |Dinesh      |
 
 
   @GetNewOrder

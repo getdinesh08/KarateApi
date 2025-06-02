@@ -1,6 +1,6 @@
 Feature: Verifying the Scenario Outline functionality
 
-  @scenarioOutline
+  @scenarioOutline @only
   Scenario Outline: To verify how scenario outline works
 
     Given url '<url>'
